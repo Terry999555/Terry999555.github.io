@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Android 广播 | 到了我的周末</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Broadcast">
+<meta name="keywords" content="广播">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 广播">
+<meta property="og:url" content="http://www.999555yun.com/2016/09/26/Android-广播/index.html">
+<meta property="og:site_name" content="到了我的周末">
+<meta property="og:description" content="Broadcast">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-26T06:36:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android 广播">
+<meta name="twitter:description" content="Broadcast">
+  
+    <link rel="alternative" href="/atom.xml" title="到了我的周末" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet">
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: false,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img src="/img/head.jpg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">Terry</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">要想前行,就要离开现在停留的地方.</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="http://www.999555yun.com">博客首页</a></li>
+                        
+                            <li><a href="http://www.jianshu.com/u/4d6e14b90592">简书</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.163.com/" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/Terry999555" title="github">github</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Android-Activity/" style="font-size: 10px;">Android Activity</a> <a href="/tags/Android-Event/" style="font-size: 10px;">Android Event</a> <a href="/tags/Android-Screen/" style="font-size: 10px;">Android Screen</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/Android-权限/" style="font-size: 10px;">Android 权限</a> <a href="/tags/Broadcast/" style="font-size: 10px;">Broadcast</a> <a href="/tags/CoordinatorLayout/" style="font-size: 10px;">CoordinatorLayout</a> <a href="/tags/Gradle/" style="font-size: 10px;">Gradle</a> <a href="/tags/JCenter/" style="font-size: 10px;">JCenter</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java-基础/" style="font-size: 10px;">Java 基础</a> <a href="/tags/Rxjava/" style="font-size: 10px;">Rxjava</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/python-scrapy/" style="font-size: 10px;">python scrapy</a> <a href="/tags/反编译/" style="font-size: 10px;">反编译</a> <a href="/tags/工具类/" style="font-size: 10px;">工具类</a> <a href="/tags/广播/" style="font-size: 10px;">广播</a> <a href="/tags/序列化/" style="font-size: 10px;">序列化</a> <a href="/tags/性能优化/" style="font-size: 10px;">性能优化</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/自定义view/" style="font-size: 10px;">自定义view</a> <a href="/tags/蓝牙BLE/" style="font-size: 10px;">蓝牙BLE</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">android 开发,记录开发点滴。</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Terry</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img src="/img/head.jpg" class="js-avatar" style="width: 100%; height: 100%; opacity: 1;">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Terry</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">要想前行,就要离开现在停留的地方.</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="http://www.999555yun.com">博客首页</a></li>
+                
+                    <li><a href="http://www.jianshu.com/u/4d6e14b90592">简书</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.163.com/" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/Terry999555" title="github">github</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Android-广播" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/26/Android-广播/" class="article-date">
+      <time datetime="2016-09-26T06:35:49.000Z" itemprop="datePublished">2016-09-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android 广播
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/广播/">广播</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="Broadcast"><a href="#Broadcast" class="headerlink" title="Broadcast"></a>Broadcast</h3><a id="more"></a>
+<blockquote>
+<p>接收系统或者其他应用发送的广播，对自己感兴趣的进行注册</p>
+</blockquote>
+<h4 id="广播机制"><a href="#广播机制" class="headerlink" title="广播机制"></a>广播机制</h4><ol>
+<li><p><strong>标准广播(Normal Broadcast)</strong></p>
+<blockquote>
+<p>是一种完全的异步广播，广播发出后，所有的广播接收器，同一时刻收<br>到，没有任何的先后的顺序，效率高。但同时也意味着无法被截断。</p>
+</blockquote>
+</li>
+<li><p><strong>有序广播(Ordered Broadcast)</strong></p>
+<blockquote>
+<p>是一种同步执行的广播，广播发出后，同一时刻只有一个广播接收器<br>可以接收到广播，当这个广播接收器中的逻辑执行完毕后，广播才会继续<br>此时的广播接收器是有先后顺序的，优先级高的广播接收器就会先接收<br>到消息。并且前面的广播的接收器还可以截断广播，后面的就无法接收到<br>广播。</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="系统广播"><a href="#系统广播" class="headerlink" title="系统广播"></a>系统广播</h4><ol>
+<li><strong>动态注册</strong></li>
+</ol>
+<ul>
+<li>动态注册，顾名思义就是使用代码注册，需要使用到<br><code>registerReceiver(receiver, intentFilter);</code><br>两个参数分别为1–&gt; 广播接收器，2–&gt;过滤器。<br>首先我们要自定义一个广播接收器继承自BroadcastReceiver,并且重写<br><code>onRecevier()</code>方法。<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//注册网络接收</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">NetworkChangeReceiver</span> <span class="keyword">extends</span> <span class="title">BroadcastReceiver</span> </span>&#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</span><br><span class="line">            ConnectivityManager manager = (ConnectivityManager)</span><br><span class="line">                    getSystemService(Context.CONNECTIVITY_SERVICE);</span><br><span class="line">            <span class="keyword">if</span> (manager != <span class="keyword">null</span>) &#123;</span><br><span class="line">                NetworkInfo networkInfo = manager.getActiveNetworkInfo();</span><br><span class="line">                <span class="keyword">if</span> (networkInfo != <span class="keyword">null</span> &amp;&amp; networkInfo.isAvailable()) &#123;</span><br><span class="line">                    Toast.makeText(context, <span class="string">"网络正在链接"</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    Toast.makeText(context, <span class="string">"网络不可链接"</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这段代码是监听的网络链接的情况，接收系统发出的，网络链接的广播的消息<br>通过Toast提示用户。<br>过滤器是IntentFilter来实现，首先实例化IntentFilter来添加action<br><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">IntentFilter intentFilter = new IntentFilter();</span><br><span class="line">intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");</span><br></pre></td></tr></table></figure></p>
+<p>然后就是注册广播<br><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">//第一个参数是，实例化广播接收器，第二个是添加的过滤的条件。</span><br><span class="line">registerReceiver(receiver, intentFilter);</span><br></pre></td></tr></table></figure></p>
+<p>动态注册的广播要在Activity 销毁的时候，解注册。<br>代码如下<br><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">public class BroadcastNormalActivity extends AppCompatActivity &#123;</span><br><span class="line"><span class="code">    //动态注册广播接收 网络变化系统广播的提示。</span></span><br><span class="line"><span class="code">    private NetworkChangeReceiver receiver;</span></span><br><span class="line"><span class="code">    @Override</span></span><br><span class="line"><span class="code">    protected void onCreate(Bundle savedInstanceState) &#123;</span></span><br><span class="line"><span class="code">        super.onCreate(savedInstanceState);</span></span><br><span class="line"><span class="code">        setContentView(R.layout.activity_broadcast_normal_avtivity);</span></span><br><span class="line"><span class="code">        //实例化和添加过滤的条件。</span></span><br><span class="line"><span class="code">        IntentFilter intentFilter = new IntentFilter();</span></span><br><span class="line"><span class="code">        intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");</span></span><br><span class="line"><span class="code">        receiver = new NetworkChangeReceiver();</span></span><br><span class="line"><span class="code">        //当activity创建的时候，注册广播。</span></span><br><span class="line"><span class="code">        registerReceiver(receiver, intentFilter);</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line"><span class="code">    @Override</span></span><br><span class="line"><span class="code">    protected void onDestroy() &#123;</span></span><br><span class="line"><span class="code">        super.onDestroy();</span></span><br><span class="line"><span class="code">        //解注册</span></span><br><span class="line"><span class="code">        unregisterReceiver(receiver);</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line"><span class="code">    //注册网络接收</span></span><br><span class="line"><span class="code">    class NetworkChangeReceiver extends BroadcastReceiver &#123;</span></span><br><span class="line"><span class="code">        @Override</span></span><br><span class="line"><span class="code">        public void onReceive(Context context, Intent intent) &#123;</span></span><br><span class="line"><span class="code">            ConnectivityManager manager = (ConnectivityManager)</span></span><br><span class="line"><span class="code">                    getSystemService(Context.CONNECTIVITY_SERVICE);</span></span><br><span class="line"><span class="code">            if (manager != null) &#123;</span></span><br><span class="line"><span class="code">                NetworkInfo networkInfo = manager.getActiveNetworkInfo();</span></span><br><span class="line"><span class="code">                if (networkInfo != null &amp;&amp; networkInfo.isAvailable()) &#123;</span></span><br><span class="line"><span class="code">                    Toast.makeText(context, "网络正在链接", Toast.LENGTH_SHORT).show();</span></span><br><span class="line"><span class="code">                &#125; else &#123;</span></span><br><span class="line"><span class="code">                    Toast.makeText(context, "网络不可链接", Toast.LENGTH_SHORT).show();</span></span><br><span class="line"><span class="code">                &#125;</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li><strong>静态注册</strong></li>
+</ol>
+<ul>
+<li>静态注册，就是我们不需要想动态注册，通过代码来<code>registerReceiver()</code><br>  而是把我们自定义的广播接收器，添加到Manifest.xml清单文件中。</li>
+<li><p>好处是，无论我们注册广播的应用的程序是否启动，我们都可以收到广播</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">//我们通过as自动生成的我们自己定义的广播接收器的代码</span><br><span class="line">//测试开机的时候的收到开机通知的广播。</span><br><span class="line">public class BootCompleteReceiver extends BroadcastReceiver &#123;</span><br><span class="line"><span class="code">    //在逻辑中实现自己的效果。</span></span><br><span class="line"><span class="code">    @Override</span></span><br><span class="line"><span class="code">    public void onReceive(Context context, Intent intent) &#123;</span></span><br><span class="line"><span class="code">        Toast.makeText(context, "测试开机的时候，是否可以收到广播的消息", Toast.LENGTH_SHORT).show();</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>就是在清单文件中Manifest.xml中注册Receiver，并添加action条件<br>Manifest.xml/application 下。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">receiver</span></span></span></span><br><span class="line"><span class="xml">        android:name=".activity.homepager.FirstCodeStudy.Broadcast.BootCompleteReceiver"</span></span><br><span class="line"><span class="xml">        //表示是否启动这个广播接收器。</span></span><br><span class="line"><span class="xml">        android:enabled="true"</span></span><br><span class="line"><span class="xml">        //是否允许广播接收器接收，本应用以外的广播。</span></span><br><span class="line"><span class="xml">        android:exported="true"&gt;</span></span><br><span class="line"><span class="code">        &lt;intent-filter&gt;</span></span><br><span class="line"><span class="code">            &lt;action android:name="android.intent.action.BOOT_COMPLETED"/&gt;</span></span><br><span class="line"><span class="code">        &lt;/intent-filter&gt;</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">receiver</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>其实这个就代表了我们注册了广播，无论我们的程序是否运行，当手机开机<br>进入的时候，我们都会收到，广播的提示的我们自定义Toast的信息。</p>
+<h4 id="发送广播"><a href="#发送广播" class="headerlink" title="发送广播"></a>发送广播</h4><blockquote>
+<p>上面的我们测试的都是接收的系统的广播，属于我们自己的app接收到app外部<br>系统的消息，我们app内部通过发送广播的形式来实现我们自己的逻辑。当我们接收<br>到我们自己发送的广播的时候，来执行我们自己的逻辑。</p>
+<ol>
+<li><strong>发送标准广播</strong></li>
+</ol>
+<ul>
+<li>首先是注册广播，然后通过发送。发送代码如下。<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">//发送广播.广播我们已经静态注册好了。</span><br><span class="line"><span class="code">        mSend_normal_broad.setOnClickListener(new View.OnClickListener() &#123;</span></span><br><span class="line"><span class="code">            @Override</span></span><br><span class="line"><span class="code">            public void onClick(View v) &#123;</span></span><br><span class="line"><span class="code">                //我们可以通过Intent来进行发送广播。可以通过Intent来携带数据。在接受者那边进行接受处理。</span></span><br><span class="line"><span class="code">                //注册"android.intent.action.MY_BROADCAST" 这个广播类型的都会收到消息。</span></span><br><span class="line"><span class="code">                Intent intent = new Intent("android.intent.action.MY_BROADCAST");</span></span><br><span class="line"><span class="code">                intent.putExtra("mes","我是咚咚咚夭夭");</span></span><br><span class="line"><span class="code">                //发送标准广播的代码。</span></span><br><span class="line"><span class="code">                sendBroadcast(intent);</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;);</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<ol start="2">
+<li><strong>发送有序广播</strong></li>
+</ol>
+<ul>
+<li>注册广播2。发送代码广播在1中接收后，然后再去2中获得接受的数据。<br>第一个广播接收器中的代码<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">@(广播Broastcast)[Broadcast]Override</span><br><span class="line"><span class="code">    public void onReceive(Context context, Intent intent) &#123;</span></span><br><span class="line"><span class="code">        //获得广播发送的数据。</span></span><br><span class="line"><span class="code">        String mes = intent.getStringExtra("mes");</span></span><br><span class="line"><span class="code">        Toast.makeText(context,"1广播："+ mes, Toast.LENGTH_SHORT).show();</span></span><br><span class="line"><span class="code">        //可以选择设置新的数据。</span></span><br><span class="line"><span class="code">        setResultData("重新的去设置数据");</span></span><br><span class="line"><span class="code">        可以选择拦截不发送。</span></span><br><span class="line"><span class="code">        //abortBroadcast();</span></span><br><span class="line"><span class="code">    &#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>第二个广播接收器的代码<br><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"> @Override</span><br><span class="line"><span class="code">    public void onReceive(Context context, Intent intent) &#123;</span></span><br><span class="line"><span class="code">        //如果在第一个中设置了resultData() 参数，但是不用resultData()去获取数据，通过Intent得到的仍然是最初发布的消息。</span></span><br><span class="line"><span class="code">        String mes = intent.getStringExtra("mes");</span></span><br><span class="line"><span class="code">        //如果第一个广播的接收器中没有重新的设置数据。就会出现resultData的数据是null的情况。所以要和第一个重新设置相对应。</span></span><br><span class="line">//        String resultData = getResultData();</span><br><span class="line"><span class="code">        Toast.makeText(context, "我是广播2："+mes, Toast.LENGTH_SHORT).show();</span></span><br><span class="line"><span class="code">    &#125;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="发送本地广播"><a href="#发送本地广播" class="headerlink" title="发送本地广播"></a><strong>发送本地广播</strong></h4><blockquote>
+<p>本地广播就是只能在本应用中接受的广播，其他应用无法接受。本地广播<br>无法静态注册，静态注册是为了防止在，应用未启动的情况下接受广播，但是本地广播<br>发送的时候实在本应用，所以应用已经启动，所以就没必要使用静态广播了。</p>
+</blockquote>
+<ul>
+<li><strong>代码</strong></li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">public class SendLocalBroadcastActivity extends AppCompatActivity &#123;</span><br><span class="line"><span class="code">    private Button mBtn_local_broad;</span></span><br><span class="line"><span class="code">    //初始化LocalBroadcastManager 本地广播的代码</span></span><br><span class="line"><span class="code">    private LocalBroadcastManager localBroadcastManager;</span></span><br><span class="line"><span class="code">    private IntentFilter intentFilter;</span></span><br><span class="line"><span class="code">    private LocalBroadcast localBroadcast;</span></span><br><span class="line"><span class="code">    @Override</span></span><br><span class="line"><span class="code">    protected void onCreate(Bundle savedInstanceState) &#123;</span></span><br><span class="line"><span class="code">        super.onCreate(savedInstanceState);</span></span><br><span class="line"><span class="code">        setContentView(R.layout.activity_send_local_broadcast);</span></span><br><span class="line"><span class="code">        mBtn_local_broad = findViewById(R.id.send_my_local_broadcast);</span></span><br><span class="line"><span class="code">        //实例化本地广播</span></span><br><span class="line"><span class="code">        localBroadcastManager = LocalBroadcastManager.getInstance(this);</span></span><br><span class="line"><span class="code">        //发送广播</span></span><br><span class="line"><span class="code">        mBtn_local_broad.setOnClickListener(new View.OnClickListener() &#123;</span></span><br><span class="line"><span class="code">            @Override</span></span><br><span class="line"><span class="code">            public void onClick(View v) &#123;</span></span><br><span class="line"><span class="code">                Intent intent = new Intent("android.intent.action.LOCAL_BROAD");</span></span><br><span class="line"><span class="code">                localBroadcastManager.sendBroadcast(intent);</span></span><br><span class="line"><span class="code">            &#125;</span></span><br><span class="line"><span class="code">        &#125;);</span></span><br><span class="line"><span class="code">        //注册广播</span></span><br><span class="line"><span class="code">        //实例化过滤器.和本地广播接收器。</span></span><br><span class="line"><span class="code">        intentFilter = new IntentFilter();</span></span><br><span class="line"><span class="code">        intentFilter.addAction("android.intent.action.LOCAL_BROAD");</span></span><br><span class="line"><span class="code">        localBroadcast = new LocalBroadcast();</span></span><br><span class="line"><span class="code">        localBroadcastManager.registerReceiver(localBroadcast,intentFilter);</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line"><span class="code">    //页面退出的时候，要记得注销掉广播。</span></span><br><span class="line"><span class="code">    @Override</span></span><br><span class="line"><span class="code">    protected void onDestroy() &#123;</span></span><br><span class="line"><span class="code">        super.onDestroy();</span></span><br><span class="line"><span class="code">        localBroadcastManager.unregisterReceiver(localBroadcast);</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line"><span class="code">    //动态注册的本app的，广播接收器</span></span><br><span class="line"><span class="code">    class LocalBroadcast extends BroadcastReceiver&#123;</span></span><br><span class="line"><span class="code">        @Override</span></span><br><span class="line"><span class="code">        public void onReceive(Context context, Intent intent) &#123;</span></span><br><span class="line"><span class="code">            Toast.makeText(context, "---接收到的本地的广播---", Toast.LENGTH_SHORT).show();</span></span><br><span class="line"><span class="code">        &#125;</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫">
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝"></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信"></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/09/26/Android-广播/">Android 广播</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Terry 的个人博客">Terry</a></p>
+        <p><span>发布时间:</span>2016年09月26日 - 14时35分</p>
+        <p><span>最后更新:</span>2018年01月26日 - 14时36分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/09/26/Android-广播/" title="Android 广播">http://www.999555yun.com/2016/09/26/Android-广播/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.999555yun.com/2016/09/26/Android-广播/　　作者: Terry" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target="_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2016/10/25/Java-多态/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Java 多态
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/09/25/Java-接口/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java 接口</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Broadcast"><span class="toc-number">1.</span> <span class="toc-text">Broadcast</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#广播机制"><span class="toc-number">1.1.</span> <span class="toc-text">广播机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#系统广播"><span class="toc-number">1.2.</span> <span class="toc-text">系统广播</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#发送广播"><span class="toc-number">1.3.</span> <span class="toc-text">发送广播</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#发送本地广播"><span class="toc-number">1.4.</span> <span class="toc-text">发送本地广播</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+<div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/09/26/Android-广播/" data-title="Android 广播" data-url="http://www.999555yun.com/2016/09/26/Android-广播/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"luuman"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/10/25/Java-多态/" title="上一篇: Java 多态">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/09/25/Java-接口/" title="下一篇: Java 接口">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/05/15/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/20/序列化/">序列化</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/25/IVM虚拟机与Android虚拟机/">IVM虚拟机与Android虚拟机</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/24/CoordinatorLayout-协调布局/">CoordinatorLayout 协调布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/19/Java-虚拟机学习-1/">Java 虚拟机学习(1)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/26/性能优化（内存）/">性能优化（内存）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/03/PercentageCircle-（显示百分比）控件/">PercentageCircle （显示百分比）控件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/02/通过AS-上传Android-Library-到Bintray上的JCenter/">通过AS 上传Android Library 到Bintray上的JCenter</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/18/Android-屏幕旋转/">Android 屏幕旋转</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/17/Android-总结-四大组件之-Activity/">Android 总结 四大组件之(Activity)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/10/python（Win10）Pycharm安装Scrapy/">(Win10）Pycharm安装Scrapy</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/10/python 爬虫（小说）/">python学习1</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/Pycharm创建py文件自动添加文件头注释/"> Pycharm创建py文件自动添加文件头注释</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/26/数据库/">数据库</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/21/Android-事件分发/">Android TouchEvent</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/26/Rxjava学习/">Rxjava学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/20/反编译/">反编译</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/21/hexo-theme-头像不显示/">hexo theme 头像不显示</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/13/Android 倒计时CountDownTimer/">Android 倒计时CountDownTimer</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/08/Android-数据库/">Android 数据库</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/Android-6-0-权限/">Android 6.0 权限</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/26/AS-获取签名/">AS 获取签名</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/23/Java-回掉/">Java 回掉</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/16/Gradle-的学习/">Gradle 的学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/15/Java-继承/">Java 继承</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/26/Android-低功耗蓝牙BLE/">Android 低功耗蓝牙BLE</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/09/Java-抽象类/">Java 抽象类</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/25/Java-多态/">Java 多态</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/26/Android-广播/">Android 广播</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/25/Java-接口/">Java 接口</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/25/Java-匿名内部类/">Java 匿名内部类</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/09/Android-Broadcast/">Android Broadcast</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 Terry
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style="display:none">
+                        <span id="site-visit">海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style="display:none">
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 31;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

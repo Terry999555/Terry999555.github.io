@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Java 回掉 | 到了我的周末</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Java回掉机制">
+<meta name="keywords" content="android  一直说要努力的人">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 回掉">
+<meta property="og:url" content="http://www.999555yun.com/2017/01/23/Java-回掉/index.html">
+<meta property="og:site_name" content="到了我的周末">
+<meta property="og:description" content="Java回掉机制">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://omflg86rs.bkt.clouddn.com/blog/20171123-192927700.jpg">
+<meta property="og:image" content="http://omflg86rs.bkt.clouddn.com/blog/20171123-192848453.jpg">
+<meta property="og:image" content="http://omflg86rs.bkt.clouddn.com/blog/20171123-192815532.jpg">
+<meta property="og:updated_time" content="2018-01-25T14:03:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java 回掉">
+<meta name="twitter:description" content="Java回掉机制">
+<meta name="twitter:image" content="http://omflg86rs.bkt.clouddn.com/blog/20171123-192927700.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="到了我的周末" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet">
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: false,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img src="/img/head.jpg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">Terry</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">要想前行,就要离开现在停留的地方.</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="http://www.999555yun.com">博客首页</a></li>
+                        
+                            <li><a href="http://www.jianshu.com/u/4d6e14b90592">简书</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.163.com/" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/Terry999555" title="github">github</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Android-Activity/" style="font-size: 10px;">Android Activity</a> <a href="/tags/Android-Event/" style="font-size: 10px;">Android Event</a> <a href="/tags/Android-Screen/" style="font-size: 10px;">Android Screen</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/Android-权限/" style="font-size: 10px;">Android 权限</a> <a href="/tags/Broadcast/" style="font-size: 10px;">Broadcast</a> <a href="/tags/CoordinatorLayout/" style="font-size: 10px;">CoordinatorLayout</a> <a href="/tags/Gradle/" style="font-size: 10px;">Gradle</a> <a href="/tags/JCenter/" style="font-size: 10px;">JCenter</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java-基础/" style="font-size: 10px;">Java 基础</a> <a href="/tags/Rxjava/" style="font-size: 10px;">Rxjava</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/python-scrapy/" style="font-size: 10px;">python scrapy</a> <a href="/tags/反编译/" style="font-size: 10px;">反编译</a> <a href="/tags/工具类/" style="font-size: 10px;">工具类</a> <a href="/tags/广播/" style="font-size: 10px;">广播</a> <a href="/tags/序列化/" style="font-size: 10px;">序列化</a> <a href="/tags/性能优化/" style="font-size: 10px;">性能优化</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/自定义view/" style="font-size: 10px;">自定义view</a> <a href="/tags/蓝牙BLE/" style="font-size: 10px;">蓝牙BLE</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">android 开发,记录开发点滴。</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Terry</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img src="/img/head.jpg" class="js-avatar" style="width: 100%; height: 100%; opacity: 1;">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Terry</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">要想前行,就要离开现在停留的地方.</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="http://www.999555yun.com">博客首页</a></li>
+                
+                    <li><a href="http://www.jianshu.com/u/4d6e14b90592">简书</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.163.com/" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/Terry999555" title="github">github</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Java-回掉" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/01/23/Java-回掉/" class="article-date">
+      <time datetime="2017-01-23T12:55:14.000Z" itemprop="datePublished">2017-01-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java 回掉
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="Java回掉机制"><a href="#Java回掉机制" class="headerlink" title="Java回掉机制"></a>Java回掉机制</h3><a id="more"></a>
+<p>模块之间总是存在着一定的接口，从调用方式上看，分为三类：</p>
+<blockquote>
+<p>同步调用、异步调用、回调。</p>
+</blockquote>
+<ol>
+<li><strong>同步调用</strong><br>同步调用是最基本并且最简单的一种调用方式，<strong>类A的方法a()调用类B的方法b()</strong>，<strong>一直等待b()方法执行完毕，a()方法继续往下走</strong>。这种调用方式适用于方法b()执行时间不长的情况，因为b()方法执行时间一长或者直接阻塞的话，a()方法的余下代码是无法执行下去的，这样会造成整个流程的阻塞。</li>
+</ol>
+<p>A中的代码<br><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">TongBuA</span> &#123;</span></span><br><span class="line">    private TongBuB mTongBuB;</span><br><span class="line">    public TongBuA(TongBuB tongBuB) &#123;</span><br><span class="line">        this.mTongBuB = tongBuB;</span><br><span class="line">    &#125;</span><br><span class="line">    public void usedA() &#123;</span><br><span class="line">        LogUtil.i(<span class="string">"tong"</span>, <span class="string">"准备调用B中的方法"</span>);</span><br><span class="line">        mTongBuB.usedB();</span><br><span class="line">        LogUtil.i(<span class="string">"tong"</span>, <span class="string">"调用同步B的方法执行完毕后A执行的事情"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>B中代码<br><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">TongBuB</span> &#123;</span></span><br><span class="line">    public void usedB() &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            Thread.sleep(<span class="number">5000</span>);</span><br><span class="line">            LogUtil.i(<span class="string">"tong"</span>, <span class="string">"我是同步执行的B中的方法"</span>);</span><br><span class="line">        &#125; catch (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>测试<br><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">/<span class="regexp">/测试同步调用的例子。</span></span><br><span class="line"><span class="regexp">        mBtn_send.setOnClickListener(new View.OnClickListener() &#123;</span></span><br><span class="line"><span class="regexp">            @Override</span></span><br><span class="line"><span class="regexp">            public void onClick(View v) &#123;</span></span><br><span class="line"><span class="regexp">                TongBuB tongBuB = new TongBuB();</span></span><br><span class="line"><span class="regexp">                TongBuA tongBuA = new TongBuA(tongBuB);</span></span><br><span class="line"><span class="regexp">                tongBuA.usedA();</span></span><br><span class="line"><span class="regexp">            &#125;</span></span><br><span class="line"><span class="regexp">        &#125;);</span></span><br></pre></td></tr></table></figure></p>
+<p>点击页面中的按钮，执行a的方法结果为：<br><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="number">18</span><span class="symbol">:</span><span class="number">20</span><span class="symbol">:</span><span class="number">06</span>.<span class="number">906</span> 准备调用B中的方法</span><br><span class="line"><span class="number">18</span><span class="symbol">:</span><span class="number">20</span><span class="symbol">:</span><span class="number">11.907</span> 我是同步执行的B中的方法</span><br><span class="line"><span class="number">18</span><span class="symbol">:</span><span class="number">20</span><span class="symbol">:</span><span class="number">11.907</span> 调用同步B的方法执行完毕后A执行的事情</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://omflg86rs.bkt.clouddn.com/blog/20171123-192927700.jpg" alt="@同步调用|center|500*0"><br>有上面的时间 可以看出来，在B的类中执行的时候，有5秒的时间的消耗，但是A类中 在执行B方式下面要执行的事件，需要等待B的执行完毕才可以执行。<strong>同步调用会产生阻塞</strong>。</p>
+<ol start="2">
+<li><strong>异步调用</strong><br><strong>异步调用是为了解决同步调用可能出现阻塞</strong>，导致整个流程卡住而产生的一种调用方式。类A的方法<strong>方法a()</strong>通过<strong>新起线程</strong>的方式调用类B的方法b()，<strong>代码接着直接往下执行</strong>，<strong>这样无论方法b()执行时间多久，都不会阻塞住方法a()的执行</strong>。但是这种方式，由于方法a()不等待方法b()的执行完成，在方法a()需要方法b()执行结果的情况下（视具体业务而定，有些业务比如启异步线程发个微信通知、刷新一个缓存这种就没必要），必须通过一定的方式对方法b()的执行结果进行监听。</li>
+</ol>
+<p>A类中代码<br><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">YIBuA</span> &#123;</span></span><br><span class="line">    private YiBuB yiBuB;</span><br><span class="line">    public YIBuA(YiBuB yiBuB) &#123;</span><br><span class="line">        this.yiBuB = yiBuB;</span><br><span class="line">    &#125;</span><br><span class="line">    public void usedA() &#123;</span><br><span class="line">        LogUtil.i(<span class="string">"yi"</span>, <span class="string">"我是A中准备异步调用B中方法"</span>);</span><br><span class="line">        new Thread(new Runnable() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void run() &#123;</span><br><span class="line">                yiBuB.usedB();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;).start();</span><br><span class="line">        LogUtil.i(<span class="string">"yi"</span>, <span class="string">"我是继续执行的A中的事件，我受B执行的影响，因为B是异步执行的"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>B类代码<br><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">YiBuB</span> &#123;</span></span><br><span class="line">    public void usedB() &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            LogUtil.i(<span class="string">"yi"</span>, <span class="string">"我是异步执行的B中的方法"</span>);</span><br><span class="line">            Thread.sleep(<span class="number">3000</span>);</span><br><span class="line">        &#125; catch (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>测试<br><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">/<span class="regexp">/测试异步调用的例子。</span></span><br><span class="line"><span class="regexp">        mBtn_send.setOnClickListener(new View.OnClickListener() &#123;</span></span><br><span class="line"><span class="regexp">            @Override</span></span><br><span class="line"><span class="regexp">            public void onClick(View v) &#123;</span></span><br><span class="line"><span class="regexp">                TongBuB tongBuB = new TongBuB();</span></span><br><span class="line"><span class="regexp">                TongBuA tongBuA = new TongBuA(tongBuB);</span></span><br><span class="line"><span class="regexp">                tongBuA.usedA();</span></span><br><span class="line"><span class="regexp">            &#125;</span></span><br><span class="line"><span class="regexp">        &#125;);</span></span><br></pre></td></tr></table></figure></p>
+<p>结果<br><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="number">18</span><span class="symbol">:</span><span class="number">41</span><span class="symbol">:</span><span class="number">51.508</span> 我是A中准备异步调用B中方法</span><br><span class="line"><span class="number">18</span><span class="symbol">:</span><span class="number">41</span><span class="symbol">:</span><span class="number">51.509</span> 我是继续执行的A中的事件，我不受B执行的影响，因为B是异步执行的</span><br><span class="line"><span class="number">18</span><span class="symbol">:</span><span class="number">41</span><span class="symbol">:</span><span class="number">54.510</span> 我是异步执行的B中的方法</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://omflg86rs.bkt.clouddn.com/blog/20171123-192848453.jpg" alt="@异步调用|center|500*0"><br>从结果可以看出，A类中打印的log是连续的，并没有等待B类的执行。我们在A类中开启了线程去执行B。B耗时结果打印log。</p>
+<ol start="3">
+<li><strong>回掉</strong></li>
+</ol>
+<ul>
+<li><strong>类A的a()方法调用类B的b()方法</strong></li>
+<li><strong>类B的b()方法执行完毕主动调用类A的callback()方法</strong></li>
+<li><p><strong>双向的调用方式</strong></p>
+<blockquote>
+<p>老师向学生提问问题，学生思考后回答老师的问题。</p>
+</blockquote>
+</li>
+<li><p>首先要有回答老师问题的方式、渠道。所以我们要定义一个<strong>接口</strong>，用来实现老师获得学生<br>答案。</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">public interface CallBack &#123;</span><br><span class="line">    void answer(String answer);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>老师要有学生的引用，就是老师让那一位同学来回答问题，学生可以抽离出来，作为一个接口，用来回答老师的问题，任何人都可以实现这个接口，来回答问题。</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">public interface Student &#123;</span><br><span class="line">    void toTeacherAnswer(CallBack callBack,String question);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>老师要获得答案就要实现接口，并且想要学生回答问题，就要有学生的引用和问题。然后提问的方法中调用学生回答问题的方法。</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">Teacher</span> <span class="title">implements</span> <span class="title">CallBack</span> &#123;</span></span><br><span class="line">    /<span class="regexp">/持有学生的引用</span></span><br><span class="line"><span class="regexp">    private Student mStudent;</span></span><br><span class="line"><span class="regexp">    public Teacher(Student tom) &#123;</span></span><br><span class="line"><span class="regexp">        this.mStudent = tom;</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/向学生提出问题的方法中调用学生回答问题的方法。然后通过学生回掉接口的方式老师获得答案。</span></span><br><span class="line"><span class="regexp">    public void sendToStudent(final String question) &#123;</span></span><br><span class="line"><span class="regexp">        LogUtil.i("answer", "老师向学生提出的问题是--：" + question);</span></span><br><span class="line"><span class="regexp">        new Thread(new Runnable() &#123;</span></span><br><span class="line"><span class="regexp">            @Override</span></span><br><span class="line"><span class="regexp">            public void run() &#123;</span></span><br><span class="line"><span class="regexp">                mStudent.toTeacherAnswer(Teacher.this, question);</span></span><br><span class="line"><span class="regexp">            &#125;</span></span><br><span class="line"><span class="regexp">        &#125;).start();</span></span><br><span class="line"><span class="regexp">        LogUtil.i("answer", "消息发送成功，等待学生回答");</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/重写接口中的方法。获得学生传递的答案。</span></span><br><span class="line"><span class="regexp">    @Override</span></span><br><span class="line"><span class="regexp">    public void answer(String answer) &#123;</span></span><br><span class="line"><span class="regexp">        LogUtil.i("answer", "老师收到的学生的答案是--：" + answer);</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>具体学生(Tom)的思考和回答问题的方法。</p>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">Tom</span> <span class="title">implements</span> <span class="title">Student</span> &#123;</span></span><br><span class="line">    /<span class="regexp">/首先要实现学生的接口，复写方法。方法中包含回答问题接口的引用。引文要通过这个接口来回答问题。</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/第二个参数，是老师提出的问题。在老师的提问方法中，又学生的构造传过来的。</span></span><br><span class="line"><span class="regexp">    @Override</span></span><br><span class="line"><span class="regexp">    public void toTeacherAnswer(CallBack callBack,String question) &#123;</span></span><br><span class="line"><span class="regexp">        LogUtil.i("answer","老师的问题是--："+question);</span></span><br><span class="line"><span class="regexp">        try &#123;</span></span><br><span class="line"><span class="regexp">            Thread.sleep(3000);</span></span><br><span class="line"><span class="regexp">            String result = "1+1=2";</span></span><br><span class="line"><span class="regexp">            LogUtil.i("answer","学生的回答是--："+result);</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/调用回答问题的方法。通过这个回掉的接口来向老师传递答案。老师</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/实现了这个接口。可以获得方法中参数的答案。</span></span><br><span class="line"><span class="regexp">            callBack.answer(result);</span></span><br><span class="line"><span class="regexp">        &#125; catch (InterruptedException e) &#123;</span></span><br><span class="line"><span class="regexp">            e.printStackTrace();</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://omflg86rs.bkt.clouddn.com/blog/20171123-192815532.jpg" alt="@回掉|center|500*0"><br>我们可以实现，老师想学生提出问题，学生思考几秒钟后，回答老师的问题，并回掉接口，把答案传递给老师。</p>
+<p>回掉的核心–&gt;<strong>就是回调方将本身即this传递给调用方</strong></p>
+<h4 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h4><ol>
+<li>使用同步调用的方式，学生对象回答完毕问题之后直接把回答的答案返回给老师对象<blockquote>
+<p>这个是没有问题的。</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li>（1）如果老师想要的数据越来越多，那么<strong>返回的对象得越来越大</strong>，而<strong>使用回调则可以进行数据分离</strong>，<strong>将一批数据放在回调方法中进行处理</strong>，至于哪些数据依具体业务而定，<strong>如果需要增加返回参数，直接在回调方法中增加即可</strong>。</li>
+<li>无法解决老师希望得到<strong>学生姓名、学生解题思路先于</strong>学生回答的答案的问题。无法解决先后的顺序，回掉可以同步不同的方法和顺序实现，先后。</li>
+</ul>
+<h4 id="异步回掉"><a href="#异步回掉" class="headerlink" title="异步回掉"></a>异步回掉</h4><blockquote>
+<p>老师并不想One-By-One这样提问，而是同时向Ricky、Mike、Lucy、Bruce、Kate五位同学提问，让同学们自己思考，哪位同学思考好了就直接告诉老师答案即可。</p>
+</blockquote>
+<p>在Teacher中开启不同的线程，学生分别实现Student接口。完成自己的回答。</p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫">
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝"></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信"></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/01/23/Java-回掉/">Java 回掉</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Terry 的个人博客">Terry</a></p>
+        <p><span>发布时间:</span>2017年01月23日 - 20时55分</p>
+        <p><span>最后更新:</span>2018年01月25日 - 22时03分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/01/23/Java-回掉/" title="Java 回掉">http://www.999555yun.com/2017/01/23/Java-回掉/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.999555yun.com/2017/01/23/Java-回掉/　　作者: Terry" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target="_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2017/01/26/AS-获取签名/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          AS 获取签名
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/01/16/Gradle-的学习/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Gradle 的学习</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java回掉机制"><span class="toc-number">1.</span> <span class="toc-text">Java回掉机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#疑问"><span class="toc-number">1.1.</span> <span class="toc-text">疑问</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#异步回掉"><span class="toc-number">1.2.</span> <span class="toc-text">异步回掉</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+<div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2017/01/23/Java-回掉/" data-title="Java 回掉" data-url="http://www.999555yun.com/2017/01/23/Java-回掉/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"luuman"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/01/26/AS-获取签名/" title="上一篇: AS 获取签名">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2017/01/16/Gradle-的学习/" title="下一篇: Gradle 的学习">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/05/15/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/20/序列化/">序列化</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/25/IVM虚拟机与Android虚拟机/">IVM虚拟机与Android虚拟机</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/24/CoordinatorLayout-协调布局/">CoordinatorLayout 协调布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/19/Java-虚拟机学习-1/">Java 虚拟机学习(1)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/26/性能优化（内存）/">性能优化（内存）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/03/PercentageCircle-（显示百分比）控件/">PercentageCircle （显示百分比）控件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/02/通过AS-上传Android-Library-到Bintray上的JCenter/">通过AS 上传Android Library 到Bintray上的JCenter</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/18/Android-屏幕旋转/">Android 屏幕旋转</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/17/Android-总结-四大组件之-Activity/">Android 总结 四大组件之(Activity)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/10/python（Win10）Pycharm安装Scrapy/">(Win10）Pycharm安装Scrapy</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/10/python 爬虫（小说）/">python学习1</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/Pycharm创建py文件自动添加文件头注释/"> Pycharm创建py文件自动添加文件头注释</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/26/数据库/">数据库</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/21/Android-事件分发/">Android TouchEvent</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/26/Rxjava学习/">Rxjava学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/20/反编译/">反编译</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/21/hexo-theme-头像不显示/">hexo theme 头像不显示</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/13/Android 倒计时CountDownTimer/">Android 倒计时CountDownTimer</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/08/Android-数据库/">Android 数据库</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/Android-6-0-权限/">Android 6.0 权限</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/26/AS-获取签名/">AS 获取签名</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/23/Java-回掉/">Java 回掉</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/16/Gradle-的学习/">Gradle 的学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/15/Java-继承/">Java 继承</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/26/Android-低功耗蓝牙BLE/">Android 低功耗蓝牙BLE</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/09/Java-抽象类/">Java 抽象类</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/25/Java-多态/">Java 多态</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/26/Android-广播/">Android 广播</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/25/Java-接口/">Java 接口</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/25/Java-匿名内部类/">Java 匿名内部类</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/09/Android-Broadcast/">Android Broadcast</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 Terry
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style="display:none">
+                        <span id="site-visit">海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style="display:none">
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 31;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

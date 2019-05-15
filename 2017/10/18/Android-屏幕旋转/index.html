@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Android 屏幕旋转 | 到了我的周末</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Android 屏幕旋转带来的生命周期的问题和解决方法。">
+<meta name="keywords" content="Android Screen">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 屏幕旋转">
+<meta property="og:url" content="http://www.999555yun.com/2017/10/18/Android-屏幕旋转/index.html">
+<meta property="og:site_name" content="到了我的周末">
+<meta property="og:description" content="Android 屏幕旋转带来的生命周期的问题和解决方法。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-18T03:21:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android 屏幕旋转">
+<meta name="twitter:description" content="Android 屏幕旋转带来的生命周期的问题和解决方法。">
+  
+    <link rel="alternative" href="/atom.xml" title="到了我的周末" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet">
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: false,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img src="/img/head.jpg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">Terry</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">要想前行,就要离开现在停留的地方.</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="http://www.999555yun.com">博客首页</a></li>
+                        
+                            <li><a href="http://www.jianshu.com/u/4d6e14b90592">简书</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.163.com/" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/Terry999555" title="github">github</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Android-Activity/" style="font-size: 10px;">Android Activity</a> <a href="/tags/Android-Event/" style="font-size: 10px;">Android Event</a> <a href="/tags/Android-Screen/" style="font-size: 10px;">Android Screen</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/Android-权限/" style="font-size: 10px;">Android 权限</a> <a href="/tags/Broadcast/" style="font-size: 10px;">Broadcast</a> <a href="/tags/CoordinatorLayout/" style="font-size: 10px;">CoordinatorLayout</a> <a href="/tags/Gradle/" style="font-size: 10px;">Gradle</a> <a href="/tags/JCenter/" style="font-size: 10px;">JCenter</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java-基础/" style="font-size: 10px;">Java 基础</a> <a href="/tags/Rxjava/" style="font-size: 10px;">Rxjava</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/python-scrapy/" style="font-size: 10px;">python scrapy</a> <a href="/tags/反编译/" style="font-size: 10px;">反编译</a> <a href="/tags/工具类/" style="font-size: 10px;">工具类</a> <a href="/tags/广播/" style="font-size: 10px;">广播</a> <a href="/tags/序列化/" style="font-size: 10px;">序列化</a> <a href="/tags/性能优化/" style="font-size: 10px;">性能优化</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/自定义view/" style="font-size: 10px;">自定义view</a> <a href="/tags/蓝牙BLE/" style="font-size: 10px;">蓝牙BLE</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">android 开发,记录开发点滴。</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Terry</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img src="/img/head.jpg" class="js-avatar" style="width: 100%; height: 100%; opacity: 1;">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Terry</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">要想前行,就要离开现在停留的地方.</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="http://www.999555yun.com">博客首页</a></li>
+                
+                    <li><a href="http://www.jianshu.com/u/4d6e14b90592">简书</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.163.com/" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/Terry999555" title="github">github</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Android-屏幕旋转" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/10/18/Android-屏幕旋转/" class="article-date">
+      <time datetime="2017-10-18T03:16:10.000Z" itemprop="datePublished">2017-10-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android 屏幕旋转
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android-Screen/">Android Screen</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <blockquote>
+<p>Android 屏幕旋转带来的生命周期的问题和解决方法。</p>
+</blockquote>
+<a id="more"></a>
+<h4 id="Android-屏幕旋转"><a href="#Android-屏幕旋转" class="headerlink" title="Android 屏幕旋转"></a>Android 屏幕旋转</h4><h5 id="设定旋转与否"><a href="#设定旋转与否" class="headerlink" title="设定旋转与否"></a>设定旋转与否</h5><ol>
+<li><strong>清单配置文件 AndroidManifest.xml</strong><br>设置屏幕横屏或者竖屏<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"> &lt;!--横屏--&gt;</span><br><span class="line"><span class="symbol">android:</span>screenOrientation=<span class="string">"landscape"</span></span><br><span class="line"> &lt;!--竖屏--&gt;</span><br><span class="line"><span class="symbol">android:</span>screenOrientation=<span class="string">"portrait"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这样设置后即使屏幕旋转，Activity也不会出现销毁或方向旋转等反应,屏幕只有一个方向。</p>
+<ol start="2">
+<li><strong>动态代码设置</strong><br>需要动态改变横竖屏设置，只需要在代码中调用setRequestedOrientation()函数,一般在Activity的onCreate方法中设置<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">/<span class="regexp">/横屏设置</span></span><br><span class="line"><span class="regexp">setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/竖屏设置</span></span><br><span class="line"><span class="regexp">setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/默认设置</span></span><br><span class="line"><span class="regexp">setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这样做可以随意动态设置横竖屏的要求，但是当改变<strong>手机屏幕方向设置Activity会被销毁</strong>，重新构建。<br>　　如果用户的手机没有开启方向锁定或者在AndroidManifest.xml中设置了android:screenOrientation，默认情况下，该Activity不会响应屏幕旋转事件。在上述情况下，依然希望Activity能响应屏幕旋转，则添加如下代码<br><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">/<span class="regexp">/ onCreate 方法中 </span></span><br><span class="line"><span class="regexp">setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR);</span></span><br></pre></td></tr></table></figure></p>
+<ol start="3">
+<li>重写onConfigurationChanged()<br>如果你不希望旋转屏幕的时候Activity被不断的onDestroy()和onCreate() ，那么，可以使用次方法在AndroidMainfest.xml中添加configChanges</li>
+</ol>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">&lt;activity <span class="symbol">android:</span>configChanges=<span class="string">"keyboardHidden|orientation|screenSize"</span></span><br><span class="line">&lt;<span class="regexp">/activity&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>keyboardHidden表示键盘辅助功能隐藏，API要大于13的时候使用。<br>在Activity配置中添加上述代码，可以避免在屏幕的横屏和竖屏的切换的过程中生命周期的onDestroy()和onCreate()的执行。<br>在Activity中重写方法onConfigurationChanged()方法对屏幕的变化来进行监听。</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">public void onConfigurationChanged(Configuration newConfig) &#123;    <span class="keyword">super</span>.onConfigurationChanged(newConfig);</span><br><span class="line">    <span class="keyword">if</span> (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) &#123;        setContentView(R.layout.portrait_layout);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) &#123;</span><br><span class="line">        setContentView(R.layout.landscape_layout);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>回掉方法的优点和缺点<br><strong>优点</strong>： 可以随时监听屏幕的变化，并在代码中做相应的处理。<br><strong>缺点</strong>： 这种方法的调用，每次只能旋转90°，如果直接旋转180°，onConfiguarationChanged()方法不会被调用。</p>
+<ol start="4">
+<li><strong>结合OrientationEventListtener()自定义设置</strong><br>如果你想更加完美，更加完全的掌控监听屏幕旋转变化，比如，转屏时不想重新onCreate，尤其是在Camera界面，不想出现旋转preview时屏幕的卡顿、黑屏等问题，那么，可以尝试</li>
+</ol>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">private OrientationEventListener mOrientationListener;</span><br><span class="line"></span><br><span class="line">mOrientationListener = new OrientationEventListener(this) &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void onOrientationChanged(int rotation) &#123;</span><br><span class="line">        <span class="keyword">if</span> (((rotation &gt;= <span class="number">0</span>) &amp;&amp; (rotation &lt;= <span class="number">45</span>)) <span class="params">||</span> (rotation &gt;= <span class="number">315</span>)<span class="params">||</span>((rotation &gt;= <span class="number">135</span>)&amp;&amp;(rotation &lt;= <span class="number">225</span>))) &#123;</span><br><span class="line">            /<span class="regexp">/portrait</span></span><br><span class="line"><span class="regexp">            Log.d(TAG, "Screen orientation is Portrait!");</span></span><br><span class="line"><span class="regexp">        &#125; else if (((rotation &gt; 45) &amp;&amp; (rotation &lt; 135))||((rotation &gt; 225) &amp;&amp; (rotation &lt; 315))) &#123;</span></span><br><span class="line"><span class="regexp">            /</span><span class="regexp">/landscape</span></span><br><span class="line"><span class="regexp">            Log.d(TAG, "Screen orientation is Landscape!");</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;;</span></span><br><span class="line"><span class="regexp">mOrientationListener.enable();</span></span><br></pre></td></tr></table></figure>
+<p>根据手机的旋转的角度来判断是横屏还是竖屏。</p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫">
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝"></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信"></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/10/18/Android-屏幕旋转/">Android 屏幕旋转</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Terry 的个人博客">Terry</a></p>
+        <p><span>发布时间:</span>2017年10月18日 - 11时16分</p>
+        <p><span>最后更新:</span>2017年10月18日 - 11时21分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/10/18/Android-屏幕旋转/" title="Android 屏幕旋转">http://www.999555yun.com/2017/10/18/Android-屏幕旋转/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.999555yun.com/2017/10/18/Android-屏幕旋转/　　作者: Terry" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target="_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2017/11/02/通过AS-上传Android-Library-到Bintray上的JCenter/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          通过AS 上传Android Library 到Bintray上的JCenter
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/10/17/Android-总结-四大组件之-Activity/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android 总结 四大组件之(Activity)</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Android-屏幕旋转"><span class="toc-number">1.</span> <span class="toc-text">Android 屏幕旋转</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#设定旋转与否"><span class="toc-number">1.1.</span> <span class="toc-text">设定旋转与否</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+<div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2017/10/18/Android-屏幕旋转/" data-title="Android 屏幕旋转" data-url="http://www.999555yun.com/2017/10/18/Android-屏幕旋转/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"luuman"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/11/02/通过AS-上传Android-Library-到Bintray上的JCenter/" title="上一篇: 通过AS 上传Android Library 到Bintray上的JCenter">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2017/10/17/Android-总结-四大组件之-Activity/" title="下一篇: Android 总结 四大组件之(Activity)">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/05/15/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/20/序列化/">序列化</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/25/IVM虚拟机与Android虚拟机/">IVM虚拟机与Android虚拟机</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/24/CoordinatorLayout-协调布局/">CoordinatorLayout 协调布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/19/Java-虚拟机学习-1/">Java 虚拟机学习(1)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/26/性能优化（内存）/">性能优化（内存）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/03/PercentageCircle-（显示百分比）控件/">PercentageCircle （显示百分比）控件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/02/通过AS-上传Android-Library-到Bintray上的JCenter/">通过AS 上传Android Library 到Bintray上的JCenter</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/18/Android-屏幕旋转/">Android 屏幕旋转</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/17/Android-总结-四大组件之-Activity/">Android 总结 四大组件之(Activity)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/10/python（Win10）Pycharm安装Scrapy/">(Win10）Pycharm安装Scrapy</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/10/python 爬虫（小说）/">python学习1</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/Pycharm创建py文件自动添加文件头注释/"> Pycharm创建py文件自动添加文件头注释</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/26/数据库/">数据库</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/21/Android-事件分发/">Android TouchEvent</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/26/Rxjava学习/">Rxjava学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/20/反编译/">反编译</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/21/hexo-theme-头像不显示/">hexo theme 头像不显示</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/13/Android 倒计时CountDownTimer/">Android 倒计时CountDownTimer</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/08/Android-数据库/">Android 数据库</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/Android-6-0-权限/">Android 6.0 权限</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/26/AS-获取签名/">AS 获取签名</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/23/Java-回掉/">Java 回掉</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/16/Gradle-的学习/">Gradle 的学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/15/Java-继承/">Java 继承</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/26/Android-低功耗蓝牙BLE/">Android 低功耗蓝牙BLE</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/09/Java-抽象类/">Java 抽象类</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/25/Java-多态/">Java 多态</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/26/Android-广播/">Android 广播</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/25/Java-接口/">Java 接口</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/25/Java-匿名内部类/">Java 匿名内部类</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/09/Android-Broadcast/">Android Broadcast</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 Terry
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style="display:none">
+                        <span id="site-visit">海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style="display:none">
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 31;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

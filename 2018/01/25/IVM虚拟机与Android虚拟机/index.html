@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>IVM虚拟机与Android虚拟机 | 到了我的周末</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Java虚拟机和android 设备中的虚拟机">
+<meta name="keywords" content="android  一直说要努力的人">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IVM虚拟机与Android虚拟机">
+<meta property="og:url" content="http://www.999555yun.com/2018/01/25/IVM虚拟机与Android虚拟机/index.html">
+<meta property="og:site_name" content="到了我的周末">
+<meta property="og:description" content="Java虚拟机和android 设备中的虚拟机">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://omflg86rs.bkt.clouddn.com/blog/20171130-142227447.png">
+<meta property="og:image" content="http://omflg86rs.bkt.clouddn.com/blog/20171130-135035688.jpg">
+<meta property="og:updated_time" content="2018-01-25T14:51:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="IVM虚拟机与Android虚拟机">
+<meta name="twitter:description" content="Java虚拟机和android 设备中的虚拟机">
+<meta name="twitter:image" content="http://omflg86rs.bkt.clouddn.com/blog/20171130-142227447.png">
+  
+    <link rel="alternative" href="/atom.xml" title="到了我的周末" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet">
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: false,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img src="/img/head.jpg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">Terry</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">要想前行,就要离开现在停留的地方.</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="http://www.999555yun.com">博客首页</a></li>
+                        
+                            <li><a href="http://www.jianshu.com/u/4d6e14b90592">简书</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.163.com/" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/Terry999555" title="github">github</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Android-Activity/" style="font-size: 10px;">Android Activity</a> <a href="/tags/Android-Event/" style="font-size: 10px;">Android Event</a> <a href="/tags/Android-Screen/" style="font-size: 10px;">Android Screen</a> <a href="/tags/Android-Studio/" style="font-size: 10px;">Android Studio</a> <a href="/tags/Android-权限/" style="font-size: 10px;">Android 权限</a> <a href="/tags/Broadcast/" style="font-size: 10px;">Broadcast</a> <a href="/tags/CoordinatorLayout/" style="font-size: 10px;">CoordinatorLayout</a> <a href="/tags/Gradle/" style="font-size: 10px;">Gradle</a> <a href="/tags/JCenter/" style="font-size: 10px;">JCenter</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java-基础/" style="font-size: 10px;">Java 基础</a> <a href="/tags/Rxjava/" style="font-size: 10px;">Rxjava</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/python-scrapy/" style="font-size: 10px;">python scrapy</a> <a href="/tags/反编译/" style="font-size: 10px;">反编译</a> <a href="/tags/工具类/" style="font-size: 10px;">工具类</a> <a href="/tags/广播/" style="font-size: 10px;">广播</a> <a href="/tags/序列化/" style="font-size: 10px;">序列化</a> <a href="/tags/性能优化/" style="font-size: 10px;">性能优化</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/自定义view/" style="font-size: 10px;">自定义view</a> <a href="/tags/蓝牙BLE/" style="font-size: 10px;">蓝牙BLE</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">android 开发,记录开发点滴。</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Terry</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img src="/img/head.jpg" class="js-avatar" style="width: 100%; height: 100%; opacity: 1;">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Terry</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">要想前行,就要离开现在停留的地方.</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="http://www.999555yun.com">博客首页</a></li>
+                
+                    <li><a href="http://www.jianshu.com/u/4d6e14b90592">简书</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.163.com/" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/Terry999555" title="github">github</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-IVM虚拟机与Android虚拟机" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/01/25/IVM虚拟机与Android虚拟机/" class="article-date">
+      <time datetime="2018-01-25T14:50:03.000Z" itemprop="datePublished">2018-01-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      IVM虚拟机与Android虚拟机
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="Java虚拟机和android-设备中的虚拟机"><a href="#Java虚拟机和android-设备中的虚拟机" class="headerlink" title="Java虚拟机和android 设备中的虚拟机"></a>Java虚拟机和android 设备中的虚拟机</h3><a id="more"></a>
+<h4 id="jdk-、jvm、jre"><a href="#jdk-、jvm、jre" class="headerlink" title="jdk 、jvm、jre"></a>jdk 、jvm、jre</h4><ul>
+<li>JDK 是 Java 开发工具包，如果你要开发 Java 程序，总得使用 Java 提供的 API 进行开发吧，JDK 就是我们开发 Java 程序的工具。</li>
+<li>JDK 包含 JRE。JRE 是 Java 程序的运行时环境，也就是说，他是运行 Java 程序的一个环境。</li>
+<li>我们都知道，Java 字节码的运行需要在 JVM 中完成，所以 JRE 必定包含一个 JVM(Java 虚拟机)。</li>
+</ul>
+<h4 id="主流的JAVA虚拟机"><a href="#主流的JAVA虚拟机" class="headerlink" title="主流的JAVA虚拟机"></a>主流的JAVA虚拟机</h4><ul>
+<li>HotSpot VM</li>
+<li>J9 VM</li>
+<li>Zing VM</li>
+</ul>
+<p><strong>HotSpot</strong><br>HotSpot VM是绝对的主流。Oracle JDK、 Sun JDK、OpenJDK的各种变种（例如IcedTea、Zulu），用的都是相同核心的HotSpot VM。</p>
+<p><strong>J9</strong><br>J9是IBM开发的一个高度模块化的JVM。<br>在许多平台上，IBM J9 VM都只能跟IBM产品一起使用。这不是技术限制，而是许可证限制。</p>
+<p><strong>Zing</strong><br>Zing VM是一个从Sun HotSpot VM fork出来的一个高性能JVM，可以运行在Linux/x86-64平台上。Azul为它重新写了一套GC，也修改了VM内的许多实现细节，所以从我们自己的角度看，与其说它是HotSpot VM的一个变种，还不如把它看作“一个全新的JVM、只是凑巧与HotSpot VM很像”更合适。</p>
+<h4 id="Java-虚拟机与-Dalvik-虚拟机的关系"><a href="#Java-虚拟机与-Dalvik-虚拟机的关系" class="headerlink" title="Java 虚拟机与 Dalvik 虚拟机的关系"></a>Java 虚拟机与 Dalvik 虚拟机的关系</h4><blockquote>
+<p>由于 Androd 运行在移动设备上，内存以及电量等诸多方面跟一般的 PC 设备都有本质的区别 ，一般的 JVM 没法满足移动设备的要求，所以在开发 Android 过程中，Android 团队一开始就必须打造一个符合移动设备的可以执行 Java 代码的虚拟机。</p>
+</blockquote>
+<h5 id="JVM-与-Dalvik-的区别"><a href="#JVM-与-Dalvik-的区别" class="headerlink" title="JVM 与 Dalvik 的区别"></a>JVM 与 Dalvik 的区别</h5><blockquote>
+<p>到这里你会发现，其实 Dalvik 是一个更符合移动设备的用于执行 Java 代码的虚拟机，但又不是一个严格按照 JVM 规范的虚拟机实现，下面分别从执行文件格式等其他方面介绍一下他们的区别。</p>
+<ol>
+<li>Dalvik： Dalvik是Google公司自己设计用于Android平台的Java虚拟机它可以支持已转换为 .dex（即Dalvik Executable）格式的Java应用程序的运行，.dex格式是专为Dalvik设计的一种压缩格式，适合内存和处理器速度有限的系统。执行的是字节码，它是依靠Just-In-Time (JIT)机制去解释字节码</li>
+<li>ART：即Android Runtime，google为了替代Dalvik专门为Android研发的。Android KK为开发者推出，L版本正式上线。比替代品更高效省电，执行的是本地机器码，依靠Ahead-Of-Time (AOT)机制<br><img src="http://omflg86rs.bkt.clouddn.com/blog/20171130-142227447.png" alt="@如图|center|500*0"></li>
+<li><strong>格式</strong><br>JVM 可以执行的文件是 .class 结尾的字节码文件，而 Dalvik 执行的是 dex 文件。</li>
+</ol>
+</blockquote>
+<p> 但是按照 JVM 的规范，虚拟机只能执行 .class 文件，所以这里也印证上面抛出的那个结论，Dalvik 并不是一个符合 JVM 规范的 Java 虚拟机。</p>
+<p> 为什么 Dalvik 执行 dex 文件而不是 .class 文件，其实这里是 Android 专为 Dalvik 虚拟机做的一个优化。</p>
+<p> Java 虚拟机执行 .class 格式的字节码。每一个 Java 文件对应一个 .class 的字节码文件，JVM 在运行时为每一个执行到的类装载字节码。而 Android 设备上为了提高执行效率，在编译 Android 项目时，Android 通过 SDK 提供的工具 dex.jar 会把所有的 .class 文件最终打包成一个 .dex 文件(不一定是一个)。</p>
+<ol start="2">
+<li><p><strong>Base</strong><br>Dalvik 基于寄存器，而 JVM 基于栈，很明显，基于寄存器的 Dalvik 在速度方面优势会更明显。</p>
+</li>
+<li><p><strong>运行环境</strong><br>Dalvik 经过优化，允许在有限的内存中同时运行多个虚拟机的实例，并且每一个 Dalvik 应用作为一个独立的 Linux 进程执行。</p>
+<p>独立的进程可以防止在虚拟机崩溃的时候所有程序都被关闭。<br>除了上面提到的，还有以下几点。</p>
+<ul>
+<li>Dalvik负责进程隔离和线程管理，每一个Android应用在底层都会对应一个独立的Dalvik虚拟机实例，其代码在虚拟机的解释下得以执行。</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>dex 文件格式可以减少整体文件尺寸，提高I/O操作的类查找速度。</li>
+<li>有一个特殊的虚拟机进程Zygote，他是虚拟机实例的孵化器。它在系统启动的时候就会产生，它会完成虚拟机的初始化、库的加载、预制类库和初始化的操作。如果系统需要一个新的虚拟机实例，它会迅速复制自身，以最快的速度提供给系统。</li>
+</ul>
+<h4 id="Dalivk-与-ART-虚拟机"><a href="#Dalivk-与-ART-虚拟机" class="headerlink" title="Dalivk 与 ART 虚拟机"></a>Dalivk 与 ART 虚拟机</h4><blockquote>
+<p>从 Android L 开始，Android 开始启用了新设计的虚拟机 ART。与 Dalvik 不同，在Dalvik下，应用每次运行的时候，字节码都需要通过即时编译器（Just In Time ，JIT）转换为本地机器码，这会拖慢应用的运行效率。</p>
+</blockquote>
+<p>而在ART 环境中，应用在第一次安装的时候，会使用设备上的dex2oat 工具进行字节码转码，把字节码预先编译成本地机器码，使其成为真正的本地应用。这个过程叫做预编译（Ahead-Of-Time，AOT）。<br>采用 AOT 策略后的好处显而易见，应用的启动速度会因此快很多，但是与此同时，应用的安装时间就会因为执行 AOT 操作而变长，但是相比之下还是非常值得。</p>
+<p>另外，ART的另一个缺点就是对存储空间占用变大。一般的字节码在编译转码后占用的空间大小比之前要增大10%-20%。</p>
+<p>除了 AOT 机制，ART 另外一个显著的提升就是垃圾回收方面的提升。相比 Dalvik 虚拟机，ART 虚拟机具有更高的回收性能。具体可以查看知乎的一个同学的回答，或者可以直接看官方的文档说明。</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>Dalvik 其实可以理解为一个专为移动设备优化过的 JVM，它的大部分地方都遵守了 JVM 规范，其实那些不符合规范的地方，就可以理解为为移动设备做的优化工作。而 ART 是一个具有更高性能的 Android 虚拟机，从一开始他就是为取代 Dalvik 而来，它的 AOT 机制相比Dalvik 的 JIT 机制使得应用有更快的启动速度。同时 ART 虚拟机在垃圾回收方面也比 Dalvik 更加高性能。</p>
+<h4 id="附"><a href="#附" class="headerlink" title="附"></a>附</h4><p><strong>JIT</strong>    Dalvik 虚拟机运行 App 的机制，运行期实时翻译（Just In Time）。</p>
+<p><strong>AOT</strong>  ART 虚拟机对 App 运行的优化机制，它在应用安装时就提前（Ahead-Of-Time）做好了字节码到机器码的翻译工作。</p>
+<h4 id="Improved-garbage-collection"><a href="#Improved-garbage-collection" class="headerlink" title="Improved garbage collection"></a>Improved garbage collection</h4><p>首先介绍下dalvik的gc的过程.主要有有四个过程</p>
+<ol>
+<li>当gc被触发时候,其会去查找所有活动的对象,这个时候整个程序与虚拟机内部的所有线程就会挂起,这样目的是在较少的堆栈里找到所引用的对象.需要注意的是这个回收动作是和应用程序同时执行(<strong>非并发</strong>).</li>
+<li>gc对符合条件的对象进行标记</li>
+<li>gc对标记的对象进行回收</li>
+<li>恢复所有线程的执行现场继续运行<br><strong>dalvik这么做的好处是,当pause了之后,gc势必是相当快速的.但是如果出现gc频繁并且内存吃紧势必会导致ui卡顿,掉帧.操作不流畅等</strong></li>
+</ol>
+<p>后来art改善了这种gc方式(也是想对ui流畅度做贡献,当然关于ui流畅,5.0以上了新的并行ui线程),主要的改善点在将其非并发过程改变成了部分并发.还有就是对内存的重新分配管理当art gc发生时</p>
+<ol>
+<li>gc将会锁住java堆,扫描并进行标记</li>
+<li>标记完毕释放掉java堆的锁,并且挂起所有线程</li>
+<li>gc对标记的对象进行回收</li>
+<li>恢复所有线程的执行现场继续运行</li>
+<li>重复2-4直到结束可以看出整个过程做到了部分并发使得时间缩短.据官方测试数据说gc效率提高2倍</li>
+</ol>
+<h4 id="Improved-memory-usage-and-reduce-fragmentation"><a href="#Improved-memory-usage-and-reduce-fragmentation" class="headerlink" title="Improved memory usage and reduce fragmentation"></a>Improved memory usage and reduce fragmentation</h4><p>官方把这一点合并到了Improved garbage collection这个主题中讲,原因也是和gc有很大关系可以对比一下两个虚拟机的内存分配的规则,首先是dalvik.他的内存管理特点是:内存碎片化严重,当然这也是Mark and Sweep算法带来的弊端<br>该算法如图(》<br><img src="http://omflg86rs.bkt.clouddn.com/blog/20171130-135035688.jpg" alt="@图片来自《深入理解jvm》|center|400*0"></p>
+<p>可以看出每次gc后内存千疮百孔,本来连续分配的内存块变得碎片化严重,之后再分配进入的对象再进行内存寻址变得困难art的解决:在art中,它将java分了一块空间命名为Large-Object-Space,这块内存空间的引入用来专门存放large object.同时art又引入了moving collector的技术,即将不连续的物理内存块进行对齐.对齐了后内存碎片化就得到了很好的解决.Large-Object-Space的引入一是因为moving collector对大块内存的位移时间成本太高,而且提高内存的利用率根官方统计，art的内存利用率提高10倍了左右</p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫">
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝"></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信"></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/01/25/IVM虚拟机与Android虚拟机/">IVM虚拟机与Android虚拟机</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Terry 的个人博客">Terry</a></p>
+        <p><span>发布时间:</span>2018年01月25日 - 22时50分</p>
+        <p><span>最后更新:</span>2018年01月25日 - 22时51分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/01/25/IVM虚拟机与Android虚拟机/" title="IVM虚拟机与Android虚拟机">http://www.999555yun.com/2018/01/25/IVM虚拟机与Android虚拟机/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.999555yun.com/2018/01/25/IVM虚拟机与Android虚拟机/　　作者: Terry" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target="_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2018/02/20/序列化/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          序列化
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/24/CoordinatorLayout-协调布局/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CoordinatorLayout 协调布局</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java虚拟机和android-设备中的虚拟机"><span class="toc-number">1.</span> <span class="toc-text">Java虚拟机和android 设备中的虚拟机</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#jdk-、jvm、jre"><span class="toc-number">1.1.</span> <span class="toc-text">jdk 、jvm、jre</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#主流的JAVA虚拟机"><span class="toc-number">1.2.</span> <span class="toc-text">主流的JAVA虚拟机</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Java-虚拟机与-Dalvik-虚拟机的关系"><span class="toc-number">1.3.</span> <span class="toc-text">Java 虚拟机与 Dalvik 虚拟机的关系</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#JVM-与-Dalvik-的区别"><span class="toc-number">1.3.1.</span> <span class="toc-text">JVM 与 Dalvik 的区别</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Dalivk-与-ART-虚拟机"><span class="toc-number">1.4.</span> <span class="toc-text">Dalivk 与 ART 虚拟机</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#总结"><span class="toc-number">1.5.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#附"><span class="toc-number">1.6.</span> <span class="toc-text">附</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Improved-garbage-collection"><span class="toc-number">1.7.</span> <span class="toc-text">Improved garbage collection</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Improved-memory-usage-and-reduce-fragmentation"><span class="toc-number">1.8.</span> <span class="toc-text">Improved memory usage and reduce fragmentation</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+<div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2018/01/25/IVM虚拟机与Android虚拟机/" data-title="IVM虚拟机与Android虚拟机" data-url="http://www.999555yun.com/2018/01/25/IVM虚拟机与Android虚拟机/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"luuman"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2018/02/20/序列化/" title="上一篇: 序列化">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2018/01/24/CoordinatorLayout-协调布局/" title="下一篇: CoordinatorLayout 协调布局">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/05/15/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/20/序列化/">序列化</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/25/IVM虚拟机与Android虚拟机/">IVM虚拟机与Android虚拟机</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/24/CoordinatorLayout-协调布局/">CoordinatorLayout 协调布局</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/19/Java-虚拟机学习-1/">Java 虚拟机学习(1)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/26/性能优化（内存）/">性能优化（内存）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/03/PercentageCircle-（显示百分比）控件/">PercentageCircle （显示百分比）控件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/02/通过AS-上传Android-Library-到Bintray上的JCenter/">通过AS 上传Android Library 到Bintray上的JCenter</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/18/Android-屏幕旋转/">Android 屏幕旋转</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/17/Android-总结-四大组件之-Activity/">Android 总结 四大组件之(Activity)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/10/python（Win10）Pycharm安装Scrapy/">(Win10）Pycharm安装Scrapy</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/10/python 爬虫（小说）/">python学习1</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/Pycharm创建py文件自动添加文件头注释/"> Pycharm创建py文件自动添加文件头注释</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/26/数据库/">数据库</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/21/Android-事件分发/">Android TouchEvent</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/26/Rxjava学习/">Rxjava学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/20/反编译/">反编译</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/21/hexo-theme-头像不显示/">hexo theme 头像不显示</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/13/Android 倒计时CountDownTimer/">Android 倒计时CountDownTimer</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/08/Android-数据库/">Android 数据库</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/Android-6-0-权限/">Android 6.0 权限</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/26/AS-获取签名/">AS 获取签名</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/23/Java-回掉/">Java 回掉</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/16/Gradle-的学习/">Gradle 的学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/15/Java-继承/">Java 继承</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/26/Android-低功耗蓝牙BLE/">Android 低功耗蓝牙BLE</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/09/Java-抽象类/">Java 抽象类</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/25/Java-多态/">Java 多态</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/26/Android-广播/">Android 广播</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/25/Java-接口/">Java 接口</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/25/Java-匿名内部类/">Java 匿名内部类</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/09/Android-Broadcast/">Android Broadcast</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 Terry
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style="display:none">
+                        <span id="site-visit">海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style="display:none">
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 31;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

