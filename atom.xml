@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.999555yun.com/"/>
-  <updated>2019-05-15T05:05:26.400Z</updated>
+  <updated>2019-05-15T06:36:50.703Z</updated>
   <id>http://www.999555yun.com/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>Hello World</title>
     <link href="http://www.999555yun.com/2019/05/15/hello-world/"/>
     <id>http://www.999555yun.com/2019/05/15/hello-world/</id>
-    <published>2019-05-15T05:05:26.400Z</published>
-    <updated>2019-05-15T05:05:26.400Z</updated>
+    <published>2019-05-15T06:36:50.702Z</published>
+    <updated>2019-05-15T06:36:50.703Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
     
@@ -218,26 +218,6 @@
   </entry>
   
   <entry>
-    <title>(Win10）Pycharm安装Scrapy</title>
-    <link href="http://www.999555yun.com/2017/10/10/python%EF%BC%88Win10%EF%BC%89Pycharm%E5%AE%89%E8%A3%85Scrapy/"/>
-    <id>http://www.999555yun.com/2017/10/10/python（Win10）Pycharm安装Scrapy/</id>
-    <published>2017-10-10T07:35:03.000Z</published>
-    <updated>2017-10-13T08:21:46.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>python (Win10）Pycharm安装Scrapy</p><a id="more"></a><h4 id="pycharm中安装框架还是比较方便的"><a href="#pycharm中安装框架还是比较方便的" class="headerlink" title="pycharm中安装框架还是比较方便的"></a>pycharm中安装框架还是比较方便的</h4><p><img src="http://omflg86rs.bkt.clouddn.com/blog/20171013-155203679.jpg" alt="@如图|center|150*150"><br><img src="http://omflg86rs.bkt.clouddn.com/blog/20171013-155352919.jpg" alt="@点击加号"><br>点击  <strong>+</strong><br><img src="http://omflg86rs.bkt.clouddn.com/blog/20171013-155551096.jpg" alt="@输入自己想要下载的模块"></p><ul><li>输入自己想要安装的框架，但是就是输入<strong>sracpy</strong> install 的时候提示错误。<br><strong>error: Microsoft Visual C++ 14.0 is required. Get it with “Microsoft Visual C++ Build Tools”: <a href="http://landinghub.visualstudio.com/visual-cpp-build-tools" target="_blank" rel="noopener">http://landinghub.visualstudio.com/visual-cpp-build-tools</a></strong> </li><li>让我们去下载这个软件，但是通过搜索发现，可以不用去下载这个，也可以安装上scrapy，就是先安装其他的模块，<strong>lxml,twisted,pypiwin32。</strong>  这三个模块是安装前提前安装的，由于我的<strong>lxml</strong>已经安装了，所以就去安装剩下的两个，<strong>pypiwin32。</strong>也可以通过pycharm搜索安装，但是在安装<strong>twisted</strong>的时候还是报错</li></ul><hr><h4 id="下载twisted"><a href="#下载twisted" class="headerlink" title="下载twisted"></a>下载twisted</h4><ul><li>找到文章说是要自己手动的去下载安装自己需要的版本。<br><a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted" target="_blank" rel="noopener">twisted下载</a><br><img src="http://omflg86rs.bkt.clouddn.com/blog/20171013-160550048.jpg" alt="@我的是win10 64 python3.5.2|center"></li><li>所以选择自己对应的版本下载到自己的电脑（位置随意），然后去手动的安装。<br><img src="http://omflg86rs.bkt.clouddn.com/blog/20171013-160750728.jpg" alt="就是这个文件|center"><h4 id="安装-twisted"><a href="#安装-twisted" class="headerlink" title="安装 twisted"></a>安装 twisted</h4></li><li>打开命令提示符窗口，输入命令<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">pip install <span class="symbol">E:</span>\Wenjian\Twisted\Twisted-<span class="number">17.9</span>.<span class="number">0</span>-cp35-cp35m-win_amd64.whl(下载好的twisted模块的whl文件路径)</span><br></pre></td></tr></table></figure></li></ul><p>提示安装成功后。再去pycharm下载scrapy。<br><img src="http://omflg86rs.bkt.clouddn.com/blog/20171013-155551096.jpg" alt="@下载后颜色变化蓝色"><br>最后就可以建立自己的项目了。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;python (Win10）Pycharm安装Scrapy&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="python scrapy" scheme="http://www.999555yun.com/tags/python-scrapy/"/>
-    
-  </entry>
-  
-  <entry>
     <title>python学习1</title>
     <link href="http://www.999555yun.com/2017/10/10/python%20%E7%88%AC%E8%99%AB%EF%BC%88%E5%B0%8F%E8%AF%B4%EF%BC%89/"/>
     <id>http://www.999555yun.com/2017/10/10/python 爬虫（小说）/</id>
@@ -254,6 +234,26 @@
     
     
       <category term="python" scheme="http://www.999555yun.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(Win10）Pycharm安装Scrapy</title>
+    <link href="http://www.999555yun.com/2017/10/10/python%EF%BC%88Win10%EF%BC%89Pycharm%E5%AE%89%E8%A3%85Scrapy/"/>
+    <id>http://www.999555yun.com/2017/10/10/python（Win10）Pycharm安装Scrapy/</id>
+    <published>2017-10-10T07:35:03.000Z</published>
+    <updated>2017-10-13T08:21:46.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>python (Win10）Pycharm安装Scrapy</p><a id="more"></a><h4 id="pycharm中安装框架还是比较方便的"><a href="#pycharm中安装框架还是比较方便的" class="headerlink" title="pycharm中安装框架还是比较方便的"></a>pycharm中安装框架还是比较方便的</h4><p><img src="http://omflg86rs.bkt.clouddn.com/blog/20171013-155203679.jpg" alt="@如图|center|150*150"><br><img src="http://omflg86rs.bkt.clouddn.com/blog/20171013-155352919.jpg" alt="@点击加号"><br>点击  <strong>+</strong><br><img src="http://omflg86rs.bkt.clouddn.com/blog/20171013-155551096.jpg" alt="@输入自己想要下载的模块"></p><ul><li>输入自己想要安装的框架，但是就是输入<strong>sracpy</strong> install 的时候提示错误。<br><strong>error: Microsoft Visual C++ 14.0 is required. Get it with “Microsoft Visual C++ Build Tools”: <a href="http://landinghub.visualstudio.com/visual-cpp-build-tools" target="_blank" rel="noopener">http://landinghub.visualstudio.com/visual-cpp-build-tools</a></strong> </li><li>让我们去下载这个软件，但是通过搜索发现，可以不用去下载这个，也可以安装上scrapy，就是先安装其他的模块，<strong>lxml,twisted,pypiwin32。</strong>  这三个模块是安装前提前安装的，由于我的<strong>lxml</strong>已经安装了，所以就去安装剩下的两个，<strong>pypiwin32。</strong>也可以通过pycharm搜索安装，但是在安装<strong>twisted</strong>的时候还是报错</li></ul><hr><h4 id="下载twisted"><a href="#下载twisted" class="headerlink" title="下载twisted"></a>下载twisted</h4><ul><li>找到文章说是要自己手动的去下载安装自己需要的版本。<br><a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted" target="_blank" rel="noopener">twisted下载</a><br><img src="http://omflg86rs.bkt.clouddn.com/blog/20171013-160550048.jpg" alt="@我的是win10 64 python3.5.2|center"></li><li>所以选择自己对应的版本下载到自己的电脑（位置随意），然后去手动的安装。<br><img src="http://omflg86rs.bkt.clouddn.com/blog/20171013-160750728.jpg" alt="就是这个文件|center"><h4 id="安装-twisted"><a href="#安装-twisted" class="headerlink" title="安装 twisted"></a>安装 twisted</h4></li><li>打开命令提示符窗口，输入命令<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">pip install <span class="symbol">E:</span>\Wenjian\Twisted\Twisted-<span class="number">17.9</span>.<span class="number">0</span>-cp35-cp35m-win_amd64.whl(下载好的twisted模块的whl文件路径)</span><br></pre></td></tr></table></figure></li></ul><p>提示安装成功后。再去pycharm下载scrapy。<br><img src="http://omflg86rs.bkt.clouddn.com/blog/20171013-155551096.jpg" alt="@下载后颜色变化蓝色"><br>最后就可以建立自己的项目了。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;python (Win10）Pycharm安装Scrapy&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="python scrapy" scheme="http://www.999555yun.com/tags/python-scrapy/"/>
     
   </entry>
   
