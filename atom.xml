@@ -43,7 +43,7 @@
     <link href="http://www.999555yun.com/2019/01/23/%E5%BE%AE%E4%BF%A1%E5%A4%9A%E5%BC%80/"/>
     <id>http://www.999555yun.com/2019/01/23/微信多开/</id>
     <published>2019-01-23T12:55:14.000Z</published>
-    <updated>2019-10-14T09:56:55.545Z</updated>
+    <updated>2019-10-14T09:59:10.763Z</updated>
     
     <content type="html"><![CDATA[<h4 id="微信PC多开"><a href="#微信PC多开" class="headerlink" title="微信PC多开"></a>微信PC多开</h4><a id="more"></a><ol><li>找到微信的图标—&gt;点击属性—&gt;打开文件家所在的位置—&gt;复制路径。</li><li>键盘  Windows + R 进入cmd 页面—&gt;首先进入到微信在的盘，然后再去cd 到微信的目录。</li><li>使用命令 start WeChat.ext&amp;WeChat.ext</li><li>打开几个 拼接几个WeCaht.exe</li></ol>]]></content>
     
